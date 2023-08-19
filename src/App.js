@@ -7,6 +7,7 @@ import SingleProducts from "./SingleProducts";
 import CartPage from "./Cart";
 import ErrorPage from "./ErrorPage";
 import Navber from "./components/Navber";
+import Login from "./Login";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
     <Route path="/products" element={<Products/>} />
     <Route path="/contact" element={<ContactPage/>} />
     <Route path="/singleProducts/:id" element={<SingleProducts/>} />
+    <Route path="/login" element={<Login/>} />
     <Route path="/cart" element={<CartPage/>} />
     <Route path="*" element={<ErrorPage/>} />
    </Routes>

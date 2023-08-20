@@ -11,7 +11,8 @@ import Login from "./Login";
 
 const App = () => {
   return (
-   <Router>
+  <div className="app">
+     <Router>
     <Navber/>
    <Routes>
     <Route path="/" element={<HomePage/>} />
@@ -25,6 +26,7 @@ const App = () => {
    </Routes>
    
    </Router>
+  </div>
   )
 }
 

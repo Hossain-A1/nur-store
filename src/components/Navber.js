@@ -7,8 +7,8 @@ const Navber = () => {
   const [icon, setIcon] = useState();
 
   return (
-    <header className='  bg-slate-100 flex items-end justify-between'>
-      <nav className=' wrapper h-20 flex justify-between items-center md:flex  md:justify-between md:items-center   '>
+    <header className=' bg-slate-100 flex items-end justify-between w-full'>
+      <nav className='wrapper h-20 w-full  flex justify-between items-center md:flex  md:justify-between md:items-center   '>
         <h2 className='text-xl'>Eshop</h2>
 
         <div className={icon ? "navber active" : "navber"}>

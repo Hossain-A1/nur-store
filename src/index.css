@@ -3,7 +3,14 @@
 @tailwind utilities;
 
 .wrapper {
-  @apply container mx-auto px-5 lg:px-0;
+  @apply container mx-auto px-5 ;
+}
+.section-wrapper{
+  @apply container mx-auto px-5 lg:px-10;
+
+}
+.section-p {
+  @apply py-20 max-md:py-10;
 }
 .nav-lists {
   @apply flex justify-between items-center gap-5;
@@ -32,4 +39,8 @@
 }
 .active .close-outline {
   @apply max-md:inline-block;
+}
+
+.fig{
+  @apply max-md:after:absolute max-md:after:content-normal max-md:after:w-1/2 max-md:after:h-full max-md:after:-right-10 max-md:after:top-[10%] max-md:after:bg-violet-400
 }

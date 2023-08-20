@@ -1,17 +1,16 @@
-import React from 'react'
-import HeroSection from './components/HeroSection';
+import React from "react";
+import HeroSection from "./components/HeroSection";
 
 const HomePage = () => {
-
-  const data= {
-title:"Nur Store"
-  }
+  const data = {
+    title: "Nur Store",
+  };
 
   return (
     <div>
-      <HeroSection myTitle={data}/>
+      <HeroSection myTitle={data} />
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

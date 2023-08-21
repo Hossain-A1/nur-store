@@ -1,7 +1,7 @@
 import {SiTarget,SiNike} from "react-icons/si"
 const Trusted = () => {
   return (
-    <section className="section-p bg-slate-100">
+    <section className="section-p mb-10 bg-slate-100">
 <div className="flex flex-col items-center justify-center gap-5">
   <h2 className="text-xl font-medium">Trusted by 1000+ companies</h2>
   <div className="max-md:flex flex max-md:flex-col justify-around items-center md:gap-10 gap-20">

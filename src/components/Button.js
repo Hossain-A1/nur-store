@@ -13,7 +13,7 @@ const buttonVariance = cva(
         ghost:
           "bg-transparent border w-full text-center  text-gray-700 hover:bg-gray-500/10",
         transparent:
-          "bg-transparent border font-semibold rounded-lg w-full text-center text-white hover:bg-gray-500/10",
+          "bg-transparent border font-semibold rounded w-[7rem] text-center text-stale-900 hover:bg-gray-500/10",
       },
     },
     defaultVariants: {
@@ -22,9 +22,9 @@ const buttonVariance = cva(
   }
 );
 
-const Button = ({ href, placeholder, color }) => {
+const Button = ({ href, placeholder, color ,type}) => {
   return (
-    <Link href={href} className={clsx(buttonVariance({ color }))}>
+    <Link  href={href} className={clsx(buttonVariance({ color }))}>
       {placeholder}
     </Link>
   );

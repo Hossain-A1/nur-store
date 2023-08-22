@@ -18,7 +18,7 @@ const HeroSection = ({ myTitle }) => {
           </p>
           <p className='mt-5'>
             <Button
-              href='/products'
+              to='/products'
               color='violet_btn'
               placeholder='Shop now'
             />

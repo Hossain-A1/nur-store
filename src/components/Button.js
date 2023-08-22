@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 import clsx from "clsx";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const buttonVariance = cva(
   "px-4 py-3 duration-300",
@@ -8,7 +8,8 @@ const buttonVariance = cva(
   {
     variants: {
       color: {
-        violet_btn: "bg-violet-700 text-white hover:bg-violet-700/90 uppercase text-xs",
+        violet_btn:
+          "bg-violet-700 text-white hover:bg-violet-700/90 uppercase text-xs",
         dark: "bg-gray-700 text-white hover:bg-gray-700/90",
         ghost:
           "bg-transparent border w-full text-center  text-gray-700 hover:bg-gray-500/10",
@@ -22,11 +23,11 @@ const buttonVariance = cva(
   }
 );
 
-const Button = ({ href, placeholder, color ,type}) => {
+const Button = ({ to, placeholder, color,target }) => {
   return (
-    <Link  href={href} className={clsx(buttonVariance({ color }))}>
+    <NavLink to={to} target={target} className={clsx(buttonVariance({ color }))}>
       {placeholder}
-    </Link>
+    </NavLink>
   );
 };
 

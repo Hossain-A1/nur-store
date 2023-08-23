@@ -6,7 +6,7 @@ const HeroSection = ({ myTitle }) => {
   const {title} = myTitle
 
   return (
-    <section className='section-wrapper section-p'>
+    <section className='wrapper section-p '>
       <div className='grid grid-cols-2 max-md:grid-cols-1 gap-9 max-md:gap-10'>
         <div className='hero-data '>
           <p className='text-violet-400'>Welcome to</p>
@@ -27,7 +27,7 @@ const HeroSection = ({ myTitle }) => {
 
         {/* homepage images */}
         <div className='hero-images   w-full md:w-11/12 h-auto flex justify-center items-center '>
-          <figure className=' relative after:content-normal  after:my-10 after:w-[60%] after:h-[80%] after:bg-violet-400 after:absolute after:left-1/2  after:-top-[5rem] after:z-[-1] fig'>
+          <figure className=' relative after:content-normal  after:my-10 after:w-[60%] after:h-[80%] after:bg-violet-400 after:absolute after:left-1/2 max-md:after:left-1/3 max-md:after:-top-[4.4rem] after:-top-[5rem] after:z-[-1] '>
             <img
               src='images/home-image.jpeg'
               alt='hero-image'

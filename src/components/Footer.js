@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className=''>
       <section className=' flex flex-col  items-center z-[100] -mb-10 '>
-        <div className='grid grid-cols-2 bg-slate-100  w-2/3 p-5 '>
+        <div className='grid grid-cols-2 bg-slate-100 gap-10 w-2/3 p-5 '>
           <div>
             <h3>Ready to get started</h3>
             <h3>Talk to us today</h3>
@@ -24,14 +24,14 @@ const Footer = () => {
       </section>
 
       <section className=' bg-black text-white'>
-        <div className=' text-white grid grid-cols-4 pt-20 pb-10 gap-10 px-10'>
-          <div className='flex flex-col   gap-5 col-span-1'>
+        <div className=' text-white grid grid-cols-4 max-md:grid-cols-1 pt-20 pb-10 gap-10 px-10'>
+          <div className='flex flex-col max-md:items-center   gap-5 col-span-1'>
             <h3 className="capitalize font-medium">Nur store</h3>
             <p>Nur store providing reliable products since 1983, </p>
           </div>
           <div className='footer-subscribe flex flex-col items-center  gap-5 col-span-1'>
             <h3 className="capitalize font-medium">Subscribe to get important updates</h3>
-            <form action='#' className='space-y-5'>
+            <form action='#' className='flex justify-between gap-10 items-center'>
               <input
                 required
                 type='email'
@@ -73,17 +73,19 @@ const Footer = () => {
             </div>
           </div>
           <div className='footer-contactflex flex-col  gap-5 items-center col-span-1 '>
-            <h3 className="capitalize font-medium">Call Us</h3>
+          <div className="flex flex-col items-center">
+          <h3 className="capitalize font-medium">Call Us</h3>
             <h3>+66 0501747626</h3>
             <NavLink to='/contact' className="max-md:text-xl">
                 Contact
               </NavLink>
           </div>
+          </div>
         </div>
 
         <div className='footer-bottom--section '>
           <hr />
-          <div className='container grid grid-cols-2 wrapper py-2 '>
+          <div className='container grid grid-cols-2 max-md:grid-cols-1 wrapper py-2 '>
             <p>
               &copy;{new Date().getFullYear()} NurStore. All Rights Reserved.
             </p>

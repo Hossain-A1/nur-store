@@ -5,9 +5,11 @@ const { createContext, useContext, useEffect, useReducer } = require("react");
 
 const initialState = {
   isLoading: false,
+  isSingleLoading:false,
   isError: false,
   products: [],
-  featureProducts: {},
+  featureProducts: [],
+  singleProduct:{}
 };
 const AppContext = createContext();
 const API = "https://api.pujakaitem.com/api/products";
@@ -15,22 +17,33 @@ const API = "https://api.pujakaitem.com/api/products";
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(productsReducer, initialState);
 
-  useEffect(() => {
-    const getAllProduct = async (url) => {
-      try {
-        const res = await axios.get(url);
+  const getAllProduct = async (url) => {
+    try {
+      const res = await axios.get(url);
+      const products = await res.data;
+      dispatch({ type: "GET_DATA", payload: products });
+    } catch (error) {
+      dispatch({ type: "GET_ERROR" });
+    }
+  };
+  //==================== single products=======================//
+  const getSingleProduct = async (url) => {
+    dispatch({type:"SINGLE_LOADING"})
+    try {
+      const res = await axios.get(url);
+      const singleProduct = await res.data;
+      dispatch({ type: "SINGLE_DATA", payload: singleProduct});
+    } catch (error) {
+      dispatch({ type: "SINGLE_ERROR" });
+    }
+  };
 
-        const products = await res.data;
-        dispatch({ type: "GET_DATA", payload: products });
-      } catch (error) {
-        dispatch({ type: "GET_ERROR" });
-      }
-    };
+  useEffect(() => {
     getAllProduct(API);
   }, []);
 
   return (
-    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ ...state,getSingleProduct }}>{children}</AppContext.Provider>
   );
 };
 
@@ -40,4 +53,4 @@ const useProductsContexts = () => {
   return useContext(AppContext);
 };
 
-export { AppProvider, AppContext, useProductsContexts };
+export { AppProvider, AppContext, useProductsContexts   };

@@ -37,15 +37,15 @@ const SingleProducts = () => {
   }
 
   return (
-    <div className='wrapper min-h-screen'>
+    <div className='wrapper min-h-screen '>
       <PageNavigation name={name} />
 
-      <div className='grid grid-cols-2 gap-10'>
+      <div className='grid grid-cols-2 max-md:grid-cols-1 gap-10'>
         <div className='page-img'>
           <SinglePageImages image={image} />
         </div>
 
-        <div className='product-details flex flex-col gap-5 max-md:gap-3 items-start'>
+        <div className='product-details flex flex-col gap-5 max-md:gap-3 items-start section-p'>
           <h2>{name}</h2>
           <p>{stats}</p>
           <p>{reviews}</p>
@@ -61,20 +61,20 @@ const SingleProducts = () => {
           </p>
           <p>{description}</p>
 
-          <div className='product-warranty flex justify-between items-center'>
-            <div className='product-facility flex justify-center items-center'>
+          <div className='product-warranty flex justify-between gap-10 items-center'>
+            <div className='product-facility flex  flex-col  items-center gap-2'>
               <TbTruckDelivery />
               <p className="text-xs font-medium capitalize">free delivery</p>
             </div>
-            <div className='product-facility flex justify-center items-center'>
+            <div className='product-facility flex flex-col   items-center gap-2'>
               <TbReplace />
               <p className="text-xs font-medium capitalize">1 week replacement</p>
             </div>
-            <div className='product-facility flex justify-center items-center'>
+            <div className='product-facility flex flex-col   items-center gap-2'>
               <TbTruckDelivery />
               <p className="text-xs font-medium capitalize">Nur delivered</p>
             </div>
-            <div className='product-facility flex justify-center items-center'>
+            <div className='product-facility flex flex-col   items-center gap-2'>
               <MdSecurity />
               <p className="text-xs font-medium capitalize">2 years warranty</p>
             </div>

@@ -10,7 +10,7 @@ const HomePage = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <HeroSection myTitle={data} />
       <Featured/>
       <Services/>

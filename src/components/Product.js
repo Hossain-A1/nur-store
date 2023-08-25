@@ -17,7 +17,7 @@ const Product = ({ curElem }) => {
         <div className='card-data'>
           <div className='flex justify-between items-center'>
             <h3>{name}</h3>
-            <p className='card-data--price'>{PriceFormatter(price)}</p>
+            <p className='card-data--price'><PriceFormatter price={price} /></p>
           </div>
         </div>
       </div>

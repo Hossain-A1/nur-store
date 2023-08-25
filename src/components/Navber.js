@@ -7,8 +7,8 @@ const Navber = () => {
   const [icon, setIcon] = useState();
 
   return (
-    <header className=' h-20 bg-slate-100 flex flex-col justify-center items-center fixed top-0 left-0 right-0 z-[9999] '>
-      <nav className='wrapper   flex items-center justify-between   max-md:fixed  max-md:left-0 max-md:top-0 max-md:right-0 max-md:bottom-0  max-md:z-[999] '>
+    <header className=' h-20  flex flex-col justify-center items-center '>
+      <nav className='wrapper   flex items-center justify-between   max-md:fixed  max-md:left-0 max-md:top-0 max-md:right-0 max-md:bottom-0  max-md:z-[9999] '>
         <div className="max-md:fixed top-5">
           <h2 className='flex gap-1 text-xl border-2'><h2 className="bg-violet-700 text-slate-50 px-1 text-center">Nur</h2>Store</h2>
         </div>

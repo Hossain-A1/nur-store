@@ -7,7 +7,7 @@ const HeroSection = ({ myTitle }) => {
 
   return (
     <section className='wrapper section-p h-[calc(100vh-5rem)]'>
-      <div className=' grid grid-cols-2 max-md:grid-cols-1 gap-9 max-md:gap-10'>
+      <div className=' grid grid-cols-2 max-md:grid-cols-1 gap-9 max-md:gap-10 items-center'>
         <div className='hero-data '>
           <p className='text-violet-400'>Welcome to</p>
           <h1 className='text-2xl font-semibold capitalize mb-2'>{title}</h1>

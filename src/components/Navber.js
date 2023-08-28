@@ -8,9 +8,9 @@ const Navber = () => {
 
   return (
     <header className=' h-20  flex flex-col justify-center items-center '>
-      <nav className='wrapper   flex items-center justify-between   max-md:fixed  max-md:left-0 max-md:top-0 max-md:right-0 max-md:bottom-0  max-md:z-[9999] '>
-        <div className="max-md:fixed top-5">
-          <h2 className='flex gap-1 text-xl border-2'><h2 className="bg-violet-700 text-slate-50 px-1 text-center">Nur</h2>Store</h2>
+      <nav className='wrapper    flex items-center justify-between   '>
+        <div className="">
+          <h2 className='flex gap-1 text-xl border-2'><span className="bg-violet-700 text-slate-50 px-1 text-center">Nur</span>Store</h2>
         </div>
 
         <div className={icon ? "navber active" : "navber"}>
@@ -75,7 +75,7 @@ const Navber = () => {
           </ul>
 
            {/* mobile responsive */}
-        <div className='mobile-navber-btn  flex max-md:fixed max-md:top-5 max-md:right-5'>
+        <div className='mobile-navber-btn '>
           <CgMenu
             name='menu-outline'
             className='mobile-navber-icon text-4xl'

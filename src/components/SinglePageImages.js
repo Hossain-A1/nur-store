@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 const SinglePageImages = ({ image = [{ url: "" }] }) => {
-  console.log(image);
 
   const [fullImg,setFullImg] = useState(image[0])
 
@@ -11,14 +10,14 @@ const SinglePageImages = ({ image = [{ url: "" }] }) => {
         {image.map((img, i) => {
           return (
             <figure key={i} className="">
-              <img src={img.url} alt='' onClick={()=>setFullImg(img)} />
+              <img src={img.url} alt='' onClick={()=>setFullImg(img)} className="cursor-pointer object-cover"/>
             </figure>
           );
         })}
        </div>
 
-        <div className="flex justify-center items-center col-span-2">
-       <img src={fullImg.url} alt={fullImg.filename}/>
+        <div className="flex justify-center items-center col-span-2 overflow-hidden">
+       <img src={fullImg.url} alt={fullImg.filename} className="object-cover"/>
 
         </div>
      

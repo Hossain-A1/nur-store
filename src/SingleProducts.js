@@ -5,14 +5,14 @@ import PageNavigation from "./components/PageNavigation";
 import SinglePageImages from "./components/SinglePageImages";
 import { PriceFormatter } from "./helpers/PriceFromatter";
 import { TbReplace, TbTruckDelivery } from "react-icons/tb";
-import {MdSecurity} from "react-icons/md";
+import { MdSecurity } from "react-icons/md";
+import Star from "./components/Star";
 
 const DETAILS_DATA = "https://api.pujakaitem.com/api/products";
 
 const SingleProducts = () => {
   const { singleProduct, isSingleLoading, getSingleProduct } =
     useProductsContexts();
-
 
   const { id } = useParams();
 
@@ -24,7 +24,7 @@ const SingleProducts = () => {
     category,
     stock,
     reviews,
-    stats,
+    stars,
     image,
   } = singleProduct;
 
@@ -47,7 +47,7 @@ const SingleProducts = () => {
 
         <div className='product-details flex flex-col gap-5 max-md:gap-3 items-start section-p'>
           <h2>{name}</h2>
-          <p>{stats}</p>
+          <Star stars={stars} reviews={reviews}/>
           <p>{reviews}</p>
           <p className='product-price'>
             MRP:
@@ -61,31 +61,38 @@ const SingleProducts = () => {
           </p>
           <p>{description}</p>
 
-          <div className='product-warranty flex justify-between gap-10 items-center'>
+          <div className='product-warranty flex justify-between gap-5 items-center'>
             <div className='product-facility flex  flex-col  items-center gap-2'>
               <TbTruckDelivery />
-              <p className="text-xs font-medium capitalize">free delivery</p>
+              <p className='text-xs font-medium capitalize'>free delivery</p>
             </div>
             <div className='product-facility flex flex-col   items-center gap-2'>
               <TbReplace />
-              <p className="text-xs font-medium capitalize">1 week replacement</p>
+              <p className='text-xs font-medium capitalize'>
+                1 week replacement
+              </p>
             </div>
             <div className='product-facility flex flex-col   items-center gap-2'>
               <TbTruckDelivery />
-              <p className="text-xs font-medium capitalize">Nur delivered</p>
+              <p className='text-xs font-medium capitalize'>Nur delivered</p>
             </div>
             <div className='product-facility flex flex-col   items-center gap-2'>
               <MdSecurity />
-              <p className="text-xs font-medium capitalize">2 years warranty</p>
+              <p className='text-xs font-medium capitalize'>2 years warranty</p>
             </div>
           </div>
+          <hr />
 
-          <div className="data-info">
-            <p>In stock:
-              <span className="font-medium"> {stock>0 ? stock : "No have"}</span>
+          <div className='data-info'>
+            <p>
+              In stock:
+              <span className='font-medium'>
+                {" "}
+                {stock > 0 ? stock : "No stock"}
+              </span>
             </p>
             <p>
-              Brand: <span className="font-medium">{company}</span>
+              Brand: <span className='font-medium'>{company}</span>
             </p>
           </div>
         </div>

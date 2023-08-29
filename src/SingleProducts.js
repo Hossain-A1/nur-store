@@ -7,6 +7,7 @@ import { PriceFormatter } from "./helpers/PriceFromatter";
 import { TbReplace, TbTruckDelivery } from "react-icons/tb";
 import { MdSecurity } from "react-icons/md";
 import Star from "./components/Star";
+import AddToCart from "./components/AddToCart";
 
 const DETAILS_DATA = "https://api.pujakaitem.com/api/products";
 
@@ -45,10 +46,10 @@ const SingleProducts = () => {
           <SinglePageImages image={image} />
         </div>
 
-        <div className='product-details flex flex-col gap-5 max-md:gap-3 items-start section-p'>
-          <h2>{name}</h2>
-          <Star stars={stars} reviews={reviews}/>
-          <p>{reviews}</p>
+        <div className='product-details flex flex-col gap-3 items-start section-p capitalize'>
+          <h2 className='tracking-widest text-xl font-semibold'>{name}</h2>
+          <Star stars={stars} reviews={reviews} />
+
           <p className='product-price'>
             MRP:
             <del>
@@ -57,9 +58,12 @@ const SingleProducts = () => {
           </p>
 
           <p>
-            offer price: <PriceFormatter price={price} />
+            offer price:{" "}
+            <span className='font-bold'>
+              <PriceFormatter price={price} />
+            </span>
           </p>
-          <p>{description}</p>
+          <p className='text-sm font-medium'>{description}</p>
 
           <div className='product-warranty flex justify-between gap-5 items-center'>
             <div className='product-facility flex  flex-col  items-center gap-2'>
@@ -81,7 +85,7 @@ const SingleProducts = () => {
               <p className='text-xs font-medium capitalize'>2 years warranty</p>
             </div>
           </div>
-          <hr />
+          <hr className='border w-full' />
 
           <div className='data-info'>
             <p>
@@ -94,6 +98,8 @@ const SingleProducts = () => {
             <p>
               Brand: <span className='font-medium'>{company}</span>
             </p>
+            <hr className='border mt-2 max-w-full w-[90%]' />
+            {stock > 0 && <AddToCart product={singleProduct} />}
           </div>
         </div>
       </div>

@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+body{
+  background-color: #fff;
+}
 .wrapper {
   @apply container mx-auto px-5 xl:px-0;
 }
@@ -36,4 +38,8 @@
 }
 .active .close-outline {
   @apply max-md:inline-block;
+}
+
+.active-color{
+  @apply opacity-100
 }

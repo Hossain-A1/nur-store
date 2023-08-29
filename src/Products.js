@@ -2,13 +2,10 @@ import React from "react";
 import AllProducts from "./components/AllProducts";
 import Sort from "./components/Sort";
 import FilterSection from "./components/FilterSection ";
-import { useFilterContext } from "./contexts/filterContext";
 
 const Products = () => {
 
-  const { filter_products} = useFilterContext()
   
-console.log(filter_products);
   
   return (
     <main>

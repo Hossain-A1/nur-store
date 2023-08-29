@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { PriceFormatter } from "../helpers/PriceFromatter";
 
-const Product = ({ curElem }) => {
+const Product = ( curElem ) => {
   const { id, name, image, price, category } = curElem;
 
   return (

@@ -1,4 +1,4 @@
-import { useProductsContexts } from "../context/productContext";
+import { useProductsContexts } from "../contexts/productContext";
 import Product from "./Product";
 
 const Featured = () => {
@@ -14,9 +14,9 @@ const Featured = () => {
         <h2 className='common-heading text-xl font-medium'>Our Feature Services</h2>
         <div className='flex max-md:flex-col justify-between items-center max-md:gap-5'>
           {featureProducts.length > 0 &&
-            featureProducts.map((curElem,i) => (
+            featureProducts.map((curElem,index) => (
               <div>
-                <Product key={i} curElem={curElem} />
+                <Product key={index} curElem={curElem} />
               </div>
             ))}
         </div>

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useProductsContexts } from "./context/productContext";
+import { useProductsContexts } from "./contexts/productContext";
 import PageNavigation from "./components/PageNavigation";
 import SinglePageImages from "./components/SinglePageImages";
 import { PriceFormatter } from "./helpers/PriceFromatter";
@@ -22,7 +22,6 @@ const SingleProducts = () => {
     price,
     company,
     description,
-    category,
     stock,
     reviews,
     stars,
@@ -31,7 +30,7 @@ const SingleProducts = () => {
 
   useEffect(() => {
     getSingleProduct(`${DETAILS_DATA}?id=${id}`);
-  }, []);
+  }, [id]);
 
   if (isSingleLoading) {
     return <span>Loading...</span>;
@@ -48,6 +47,7 @@ const SingleProducts = () => {
 
         <div className='product-details flex flex-col gap-3 items-start section-p capitalize'>
           <h2 className='tracking-widest text-xl font-semibold'>{name}</h2>
+
           <Star stars={stars} reviews={reviews} />
 
           <p className='product-price'>
@@ -65,7 +65,7 @@ const SingleProducts = () => {
           </p>
           <p className='text-sm font-medium'>{description}</p>
 
-          <div className='product-warranty flex justify-between gap-5 items-center'>
+          <div className='product-warranty flex justify-between gap-10 items-center'>
             <div className='product-facility flex  flex-col  items-center gap-2'>
               <TbTruckDelivery />
               <p className='text-xs font-medium capitalize'>free delivery</p>

@@ -1,15 +1,15 @@
 import axios from "axios";
 import productsReducer from "../hooks/useProduct";
 
-const { createContext, useContext, useEffect, useReducer } = require("react");
+import { useContext, createContext, useReducer, useEffect } from "react";
 
 const initialState = {
   isLoading: false,
-  isSingleLoading:false,
+  isSingleLoading: false,
   isError: false,
   products: [],
   featureProducts: [],
-  singleProduct:{}
+  singleProduct: {},
 };
 const AppContext = createContext();
 const API = "https://api.pujakaitem.com/api/products";
@@ -28,11 +28,11 @@ const AppProvider = ({ children }) => {
   };
   //==================== single products=======================//
   const getSingleProduct = async (url) => {
-    dispatch({type:"SINGLE_LOADING"})
+    dispatch({ type: "SINGLE_LOADING" });
     try {
       const res = await axios.get(url);
       const singleProduct = await res.data;
-      dispatch({ type: "SINGLE_DATA", payload: singleProduct});
+      dispatch({ type: "SINGLE_DATA", payload: singleProduct });
     } catch (error) {
       dispatch({ type: "SINGLE_ERROR" });
     }
@@ -43,7 +43,9 @@ const AppProvider = ({ children }) => {
   }, []);
 
   return (
-    <AppContext.Provider value={{ ...state,getSingleProduct }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ ...state, getSingleProduct }}>
+      {children}
+    </AppContext.Provider>
   );
 };
 
@@ -53,4 +55,4 @@ const useProductsContexts = () => {
   return useContext(AppContext);
 };
 
-export { AppProvider, AppContext, useProductsContexts   };
+export { AppProvider, AppContext, useProductsContexts };

@@ -10,7 +10,7 @@ const buttonVariance = cva(
       color: {
         violet_btn:
           "bg-violet-700 text-white hover:bg-violet-700/90 uppercase text-xs",
-        dark: "bg-gray-700 text-white hover:bg-gray-700/90",
+        dark: "bg-gray-700 text-white rounded-lg hover:bg-gray-700/90",
         ghost:
           "bg-transparent border w-full text-center  text-gray-700 hover:bg-gray-500/10",
         transparent:

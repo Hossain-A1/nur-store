@@ -4,11 +4,12 @@ import GridView from './GridView';
 import ListView from './ListView';
 
 const AllProducts = () => {
-  const {filter_products,handleGridView}= useFilterContext()
-if(handleGridView){
+  const {filter_products,grid_view}= useFilterContext()
+  
+if(grid_view){
   return <GridView products={filter_products}/>
 }
-if(handleGridView === false){
+if(!grid_view){
   return <ListView products={filter_products}/>
 }
 }

@@ -2,10 +2,9 @@ import React from 'react'
 import Product from './Product';
 
 const GridView = ({products}) => {
-  console.log(products);
   return (
-    <section>
-<div className="wrapper grid grid-cols-3">
+    <section className='wrapper section-p'>
+<div className=" grid grid-cols-3 gap-10   items-center">
 {
 products &&  products.map((curEle)=>(
     <Product key={curEle.id} {...curEle} />

@@ -8,7 +8,7 @@ const CartAmount = ({amount,setDecrease,setIncrease}) => {
 <button onClick={()=> setDecrease()}>
   <FaMinus/>
 </button>
-<span>{amount}</span>
+<span className="font-semibold">{amount}</span>
 <button onClick={()=> setIncrease()}>
   <FaPlus/>
 </button>

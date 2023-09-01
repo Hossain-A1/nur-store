@@ -4,17 +4,14 @@ import Sort from "./components/Sort";
 import FilterSection from "./components/FilterSection ";
 
 const Products = () => {
-
-  
-  
   return (
-    <main>
-      <div className='grid grid-cols-4 gap-5'>
+    <main className="wrapper">
+      <div className='grid grid-cols-4 gap-10 items-center'>
         <div className='col-span-1'>
           <FilterSection />
         </div>
 
-        <div className='col-span-3 '>
+        <div className='col-span-3'>
           <div className='sort'>
             <Sort />
           </div>

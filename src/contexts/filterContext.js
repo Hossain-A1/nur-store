@@ -9,11 +9,17 @@ const initialState = {
   all_products: [],
   grid_view: true,
   sort_options: "highest",
+  filter_search: {
+    text: "",
+    category:"all",
+    company:"all"
+  },
 };
 
 const FilterContext = createContext();
 
 export const FilterContextProvider = ({ children }) => {
+
   const { products } = useProductsContexts();
 
   const [state, dispatch] = useReducer(filterReducer, initialState);
@@ -27,25 +33,43 @@ export const FilterContextProvider = ({ children }) => {
     return dispatch({ type: "SEE_LIST_VIEW" });
   };
 
+
+
   // sort functionality
   const handleSort = (e) => {
-    let userValue = e.target.value
-    dispatch({ type: "SORT_OPTION_ITEM",payload:userValue });
+    let userValue = e.target.value;
+   return dispatch({ type: "SORT_OPTION_ITEM", payload: userValue });
+  };
+
+
+  const handleSearchValue = (e) => {
+    let name = e.target.name;
+    let valueUser = e.target.value;
+
+
+  return dispatch({ type: "USER_SEARCH", payload: { name,valueUser } });
   };
 
   // sort THE PRODUCTS
   useEffect(() => {
-    dispatch({ type: "SORT_PRODUCTS"});
-  }, [state.sort_options]);
+    dispatch({type:"FILTER_SHOWING"})
+    dispatch({ type: "SORT_PRODUCTS" });
+  }, [products,state.sort_options,state.filter_search]);
 
   // FILTER PRODUCTS
   useEffect(() => {
-    dispatch({ type: "FILTER_PRODUCTS", payload: products });
+    dispatch({ type: "ALL_FILTER_PRODUCTS", payload: products });
   }, [products]);
 
   return (
     <FilterContext.Provider
-      value={{ ...state, handleGridView, handleListView, handleSort }}
+      value={{
+        ...state,
+        handleGridView,
+        handleListView,
+        handleSort,
+        handleSearchValue,
+      }}
     >
       {children}
     </FilterContext.Provider>

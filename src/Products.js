@@ -5,13 +5,13 @@ import FilterSection from "./components/FilterSection ";
 
 const Products = () => {
   return (
-    <main className="wrapper">
-      <div className='grid grid-cols-4 gap-10 items-center'>
+    <main className="wrapper section-p">
+      <div className='grid grid-cols-4 gap-10 '>
         <div className='col-span-1'>
           <FilterSection />
         </div>
 
-        <div className='col-span-3'>
+        <div className='col-span-3 items-center'>
           <div className='sort'>
             <Sort />
           </div>

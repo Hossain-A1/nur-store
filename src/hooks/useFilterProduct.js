@@ -1,6 +1,6 @@
 const useFilterProduct = (state, action) => {
   switch (action.type) {
-    case "FILTER_PRODUCTS":
+    case "ALL_FILTER_PRODUCTS":
       return {
         ...state,
         filter_products: [...action.payload],
@@ -27,7 +27,7 @@ const useFilterProduct = (state, action) => {
     case "SORT_PRODUCTS":
       let newSortData;
 
-      let { filter_products,sort_options } = state;
+      let { filter_products, sort_options } = state;
       let copySortData = [...filter_products];
 
       const sortingProducts = (x, y) => {
@@ -38,10 +38,10 @@ const useFilterProduct = (state, action) => {
           return x.price - y.price;
         }
         if (sort_options === "A-Z") {
-        return  x.name.localeCompare(y.name);
+          return x.name.localeCompare(y.name);
         }
         if (sort_options === "Z-A") {
-         return y.name.localeCompare(x.name);
+          return y.name.localeCompare(x.name);
         }
       };
 
@@ -50,6 +50,41 @@ const useFilterProduct = (state, action) => {
       return {
         ...state,
         filter_products: newSortData,
+      };
+
+    case "USER_SEARCH":
+      const { name, valueUser } = action.payload;
+
+      return {
+        ...state,
+        filter_search: {
+          ...state.filter_search,
+
+          [name]: valueUser,
+        },
+      };
+
+    case "FILTER_SHOWING":
+      let { all_products } = state;
+      let copyFilterProducts = [...all_products];
+
+      const { text,category } = state.filter_search;
+
+      if (text) {
+        copyFilterProducts = copyFilterProducts.filter((el) => {
+          return el.name.toLowerCase().includes(text);
+        });
+      }
+
+if(category){
+  copyFilterProducts = copyFilterProducts.filter((el)=>{
+    return el.category === category
+  })
+}
+
+      return {
+        ...state,
+        filter_products: copyFilterProducts,
       };
 
     default:

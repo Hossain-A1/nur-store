@@ -68,7 +68,7 @@ const useFilterProduct = (state, action) => {
       let { all_products } = state;
       let copyFilterProducts = [...all_products];
 
-      const { text,category } = state.filter_search;
+      const { text, category, company, color } = state.filter_search;
 
       if (text) {
         copyFilterProducts = copyFilterProducts.filter((el) => {
@@ -76,11 +76,21 @@ const useFilterProduct = (state, action) => {
         });
       }
 
-if(category){
-  copyFilterProducts = copyFilterProducts.filter((el)=>{
-    return el.category === category
-  })
-}
+      if (category !== "All") {
+        copyFilterProducts = copyFilterProducts.filter(
+          (el) => el.category === category
+        );
+      }
+      if (company !== "All") {
+        copyFilterProducts = copyFilterProducts.filter(
+          (el) => el.company === company
+        );
+      }
+      if (color !== "All") {
+        copyFilterProducts = copyFilterProducts.filter((el) =>
+          el.colors.includes(color)
+        );
+      }
 
       return {
         ...state,

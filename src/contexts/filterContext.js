@@ -12,7 +12,8 @@ const initialState = {
   filter_search: {
     text: "",
     category:"all",
-    company:"all"
+    company:"all",
+    color:"all"
   },
 };
 

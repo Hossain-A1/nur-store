@@ -1,10 +1,15 @@
 const useFilterProduct = (state, action) => {
   switch (action.type) {
+
     case "ALL_FILTER_PRODUCTS":
+      let priceArr = action.payload.map((curElem) => curElem.price);
+
+      let maxPrice = Math.max(...priceArr);
       return {
         ...state,
         filter_products: [...action.payload],
         all_products: [...action.payload],
+        filter_search: { ...state.filter_search, maxPrice, price: maxPrice },
       };
 
     case "SEE_GRID_VIEW":
@@ -68,7 +73,7 @@ const useFilterProduct = (state, action) => {
       let { all_products } = state;
       let copyFilterProducts = [...all_products];
 
-      const { text, category, company, color } = state.filter_search;
+      const { text, category, company, color, price } = state.filter_search;
 
       if (text) {
         copyFilterProducts = copyFilterProducts.filter((el) => {
@@ -92,9 +97,34 @@ const useFilterProduct = (state, action) => {
         );
       }
 
+      if (price === 0) {
+        copyFilterProducts = copyFilterProducts.filter(
+          (el) => el.price === price
+        );
+      } else {
+        copyFilterProducts = copyFilterProducts.filter(
+          (el) => el.price <= price
+        );
+      }
+
       return {
         ...state,
         filter_products: copyFilterProducts,
+      };
+
+    case "CLEAR_FILTERS":
+      return {
+        ...state,
+        filter_search: {
+          ...state.filter_search,
+          text: "",
+          category: "all",
+          company: "all",
+          color: "all",
+          maxPrice: state.filter_search.maxPrice,
+          price: 0,
+          minPrice: state.filter_search.minPrice,
+        },
       };
 
     default:

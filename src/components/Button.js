@@ -11,8 +11,8 @@ const buttonVariance = cva(
         violet_btn:
           "bg-violet-700 text-white hover:bg-violet-700/90 uppercase text-xs",
         dark: "bg-gray-700 text-white rounded-lg hover:bg-gray-700/90",
-        ghost:
-          "bg-transparent border w-full text-center  text-gray-700 hover:bg-gray-500/10",
+        red:
+          "bg-rose-700 border w-full text-center  text-slate-900 hover:bg-rose-700/90",
         transparent:
           "bg-transparent border font-semibold rounded w-[7rem] text-center text-stale-900 hover:bg-gray-500/10",
       },
@@ -23,9 +23,9 @@ const buttonVariance = cva(
   }
 );
 
-const Button = ({ to, placeholder, color,target }) => {
+const Button = ({ to, placeholder, color,target,onClick }) => {
   return (
-    <NavLink to={to} target={target} className={clsx(buttonVariance({ color }))}>
+    <NavLink to={to} target={target} onClick={onClick} className={clsx(buttonVariance({ color }))}>
       {placeholder}
     </NavLink>
   );

@@ -23,6 +23,8 @@ const initialState = {
 const FilterContext = createContext();
 
 export const FilterContextProvider = ({ children }) => {
+
+  
   const { products } = useProductsContexts();
 
   const [state, dispatch] = useReducer(filterReducer, initialState);
@@ -56,7 +58,7 @@ export const FilterContextProvider = ({ children }) => {
   useEffect(() => {
     dispatch({ type: "FILTER_SHOWING" });
     dispatch({ type: "SORT_PRODUCTS" });
-  }, [products, state.sort_options, state.filter_search]);
+  }, [ products ,state.sort_options, state.filter_search]);
 
   // FILTER PRODUCTS
   useEffect(() => {

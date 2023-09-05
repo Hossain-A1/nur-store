@@ -5,7 +5,7 @@ import Button from "./Button";
 
 const FilterSection = () => {
   const {
-    filter_search: { text, category, color, price, maxPrice, minPrice },
+    filter_search: { text,  color, price, maxPrice, minPrice },
     handleSearchValue,
     handleClearFilters,
     all_products,

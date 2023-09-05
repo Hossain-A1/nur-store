@@ -3,7 +3,6 @@ const useFilterProduct = (state, action) => {
 
     case "ALL_FILTER_PRODUCTS":
       let priceArr = action.payload.map((curElem) => curElem.price);
-
       let maxPrice = Math.max(...priceArr);
       return {
         ...state,

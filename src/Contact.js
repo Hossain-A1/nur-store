@@ -47,8 +47,7 @@ const ContactPage = () => {
               className='py-3 px-6 w-full h-full resize-none  outline-none bg-slate-100 font-medium border-2 border-transparent focus:border-violet-700 duration-300 rounded'
             />
           </div>
-
-          <Button  href='/email' color='transparent' placeholder='Send' />
+<button type="submit" className="px-6 py-3 border w-20 rounded bg-gray-400 hover:bg-gray-500 duration-300 font-semibold ">Send</button>
         </form>
       </div>
     </section>

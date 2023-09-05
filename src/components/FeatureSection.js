@@ -1,7 +1,7 @@
 import { useProductsContexts } from "../contexts/productContext";
 import Product from "./Product";
 
-const Featured = () => {
+const FeatureSection = () => {
   const { isLoading, featureProducts } = useProductsContexts();
 
   if (isLoading) {
@@ -16,7 +16,7 @@ const Featured = () => {
           {featureProducts.length > 0 &&
             featureProducts.map((curElem,index) => (
               <div>
-                <Product key={index} curElem={curElem} />
+                <Product key={index} {...curElem} />
               </div>
             ))}
         </div>
@@ -25,4 +25,4 @@ const Featured = () => {
   );
 };
 
-export default Featured;
+export default FeatureSection;

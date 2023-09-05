@@ -3,11 +3,16 @@ import { FaCheck } from "react-icons/fa";
 
 import CartAmount from "./CartAmount";
 import Button from "./Button";
+import { useCartContext } from "../contexts/cartContext";
+
+
 const AddToCart = ({ product }) => {
+  const {handleCart} = useCartContext()
   const { id, colors, stock } = product;
-  const [colorTic, setColorTic] = useState(colors[0]);
+  const [color, setColor] = useState(colors[0]);
 
   let [amount, setAmount] = useState(1);
+  
   const setDecrease = () => {
     amount > 1
       ? setAmount((curAmount) => (curAmount = amount--))
@@ -24,19 +29,19 @@ const AddToCart = ({ product }) => {
       <div className='colors mt-2'>
         <p className='flex gap-2 items-center'>
           Colors:
-          {colors.map((color, i) => (
+          {colors.map((el, i) => (
             <button
               key={i}
-              style={{ backgroundColor: color }}
+              style={{ backgroundColor: el }}
               className={` ${
-                colorTic === color
+                color === el
                   ? "rounded-full w-5 h-5 flex  items-center ml-4 cursor-pointer opacity-70 hover:opacity-100 duration-300 active-color"
                   : "rounded-full w-5 h-5 flex  items-center ml-4 cursor-pointer opacity-70 hover:opacity-100 duration-300"
               }  `}
-              onClick={() => setColorTic(color)}
+              onClick={() => setColor(el)}
             >
               {" "}
-              {colorTic === color ? (
+              {color === el ? (
                 <FaCheck className='text-slate-200 text-sm' />
               ) : null}{" "}
             </button>
@@ -52,7 +57,7 @@ const AddToCart = ({ product }) => {
         />
       </div>
 
-      <Button to='/cart' color='violet_btn' placeholder='Add to cart' />
+      <Button to='/cart' color='violet_btn' placeholder='Add to cart' onClick={()=>handleCart(id,color,amount,product)} />
     </div>
   );
 };

@@ -23,9 +23,9 @@ const buttonVariance = cva(
   }
 );
 
-const Button = ({ to, placeholder, color,target,onClick }) => {
+const Button = ({ to, placeholder, color,target,onClick ,type}) => {
   return (
-    <NavLink to={to} target={target} onClick={onClick} className={clsx(buttonVariance({ color }))}>
+    <NavLink to={to} target={target} type={type} onClick={onClick} className={clsx(buttonVariance({ color }))}>
       {placeholder}
     </NavLink>
   );

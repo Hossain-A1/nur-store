@@ -1,14 +1,14 @@
 import { NavLink } from "react-router-dom";
 import { PriceFormatter } from "../helpers/PriceFromatter";
 
-const Product = (curElem) => {
-  const { id, name, image, price, category } = curElem;
+const Product = ({ id, name, image, price, category } ) => {
+  
 
   return (
-    <NavLink to={`/singleproducts/${id}`} >
+    <NavLink to={`/singleproducts/${id}`}>
       <div className='card relative'>
-        <figure className='xl:w-[18rem] max-lg:w-[10rem] h-auto'>
-          <img src={image} alt={name} className='h-full w-full' />
+        <figure className='w-[18rem] h-[10rem]'>
+          <img src={image} alt={name} className='h-full w-full object-fill' />
           <figcaption className='absolute top-1 right-0 bg-slate-50/50 text-center px-2 rounded-full'>
             {category}
           </figcaption>

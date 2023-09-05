@@ -8,7 +8,7 @@ import { useCartContext } from "../contexts/cartContext";
 
 const AddToCart = ({ product }) => {
   const {handleCart} = useCartContext()
-  const { id, colors, stock } = product;
+  const { id, colors, stock ,price} = product;
   const [color, setColor] = useState(colors[0]);
 
   let [amount, setAmount] = useState(1);
@@ -26,7 +26,7 @@ const AddToCart = ({ product }) => {
 
   return (
     <div>
-      <div className='colors mt-2'>
+      <div className='colors py-3'>
         <p className='flex gap-2 items-center'>
           Colors:
           {colors.map((el, i) => (
@@ -56,8 +56,10 @@ const AddToCart = ({ product }) => {
           setIncrease={setIncrease}
         />
       </div>
+<div className="mt-5">
+<Button  to='/cart' color='violet_btn' placeholder='Add to cart' onClick={()=>handleCart(id,color,amount,product,price)} />
 
-      <Button to='/cart' color='violet_btn' placeholder='Add to cart' onClick={()=>handleCart(id,color,amount,product)} />
+</div>
     </div>
   );
 };

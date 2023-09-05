@@ -3,7 +3,7 @@ const CartAmount = ({amount,setDecrease,setIncrease}) => {
 
   return (
  
-<div className="amount-toggle flex items-center justify-start gap-5 mb-5 "> 
+<div className="amount-toggle flex items-center justify-start gap-5"> 
 
 <button onClick={()=> setDecrease()}>
   <FaMinus/>

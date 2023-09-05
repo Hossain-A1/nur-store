@@ -22,16 +22,16 @@ const CartItem = ({ id, name, stock, color, image, price }) => {
   return (
     <div className='cart-details grid grid-cols-5 gap-5 place-items-center  mt-5 '>
       {/* items */}
-      <div className='col-span-1 gap-1    '>
-      <div className="flex gap-1 ">
-      <figure className='image w-24 h-16'>
-          <img src={image} alt={name} className='w-full h-full object-cover' />
+      <div className='col-span-1 gap-2 w-full   '>
+      <div className="flex gap-2 ">
+      <figure className='image w-20 h-16'>
+          <img src={image} alt={name} className='w-full h-full object-contain' />
         </figure>
 
         <div className='flex flex-col gap-1 items-start'>
-          <p>{name}</p>
+          <p className="text-sm">{name}</p>
           <div className='flex items-center justify-center'>
-            <span className='text-lg'>Color: </span>
+            <span className='text-sm'>Color: </span>
             <div
               className='rounded-full w-5 h-5 flex  items-center ml-4 cursor-pointer opacity-70 hover:opacity-100 duration-300 active-color'
               style={{ backgroundColor: color, color }}

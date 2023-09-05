@@ -7,8 +7,8 @@ const CartPage = () => {
   console.log(cart);
   return (
     <main className='wrapper section-p min-h-screen'>
-      <div className='grid grid-cols-5 gap-5 place-items-center'>
-        <p>items</p>
+      <div className='grid grid-cols-5 gap-5 place-items-center text-lg font-semibold capitalize'>
+        <p>{cart.length <= 1? "item":"items"}</p>
         <p>price</p>
         <p>quantity</p>
         <p>subtotal</p>

@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
           <div className='footer-subscribe flex flex-col items-center  gap-5 col-span-1'>
             <h3 className="capitalize font-medium">Subscribe to get important updates</h3>
-            <form action='#' className='flex justify-between gap-10 items-center'>
+            <form action='#' className='lg:flex flex-col justify-between lg:gap-10 gap-5 items-center'>
               <input
                 required
                 type='email'

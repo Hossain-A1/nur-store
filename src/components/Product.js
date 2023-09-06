@@ -7,7 +7,7 @@ const Product = ({ id, name, image, price, category } ) => {
   return (
     <NavLink to={`/singleproducts/${id}`}>
       <div className='card relative'>
-        <figure className='w-[18rem] h-[10rem]'>
+        <figure className='w-[12rem] lg:w-18rem] lg:h-[10rem] h-[10rem]'>
           <img src={image} alt={name} className='h-full w-full object-fill' />
           <figcaption className='absolute top-1 right-0 bg-slate-50/50 text-center px-2 rounded-full'>
             {category}

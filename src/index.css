@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 body{
-  background-color: #fff;
+  background-color: #c7c6c8;
 }
 .wrapper {
   @apply container mx-auto px-5 xl:px-0;

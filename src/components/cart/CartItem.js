@@ -7,15 +7,16 @@ import { useCartContext } from "../../contexts/cartContext";
 const CartItem = ({ id, name, stock, color, image, price }) => {
 
   const {removeCart} = useCartContext()
+
   let [amount, setAmount] = useState(1);
 
   const setDecrease = () => {
-    amount > 1
+    amount >= 1
       ? setAmount((curAmount) => (curAmount = amount--))
       : setAmount(1);
   };
   const setIncrease = () => {
-    amount < stock
+    amount <= stock
       ? setAmount((curAmount) => (curAmount = amount++))
       : setAmount(stock);
   };

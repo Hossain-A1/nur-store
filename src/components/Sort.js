@@ -8,18 +8,18 @@ const Sort = () => {
 
   return (
     <section className='flex justify-between items-center'>
-      <div className='sort-list flex justify-center items-center border-none cursor-pointer gap-5'>
+      <div className='sort-list flex justify-center items-center border-none cursor-pointer lg:gap-5 gap-3'>
         <button onClick={handleGridView}>
           <BsFillGridFill
             className={
-              grid_view ? "bg-black text-white text-3xl  p-1" : "text-3xl p-1"
+              grid_view ? "bg-black text-white lg:text-3xl text-lg  p-1" : "lg:text-3xl text-lg p-1"
             }
           />
         </button>
         <button onClick={handleListView}>
           <BsList
             className={
-              !grid_view ? "bg-black text-white text-3xl p-1 " : "text-3xl p-1"
+              !grid_view ? "bg-black text-white lg:text-3xl text-lg p-1 " : "lg:text-3xl text-lg p-1"
             }
           />
         </button>
@@ -29,9 +29,9 @@ const Sort = () => {
 
       {/* sort options */}
       <div className='drop'>
-        <form action='#' className="border-2 border-violet-700 rounded">
+        <form action='#' className="border-2 border-violet-700 rounded ">
           <label htmlFor='sort'></label>
-          <select name='sort' id='sort' className='px-5 py-1 space-y-5' onClick={handleSort}>
+          <select name='sort' id='sort' className='lg:px-5 px-2 py-1 space-y-5 lg:text-lg text-sm lg:w-32 w-20' onClick={handleSort}>
             <option value='highest' className="">Highest</option>
             <option value='#' disabled></option>
             <option value='lowest'>Lowest</option>

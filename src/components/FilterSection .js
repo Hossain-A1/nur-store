@@ -30,7 +30,7 @@ const FilterSection = () => {
     <section className=''>
       <form onSubmit={(e) => e.preventDefault()}>
         <input
-          className='border-2 border-gray-700 py-1 px-4 w-40 h-8 rounded  outline-none focus:border-violet-700 duration-300'
+          className='border-2 border-gray-700 py-1 px-4 lg:w-40 w-24 lg:h-8 h-6 text-sm rounded  outline-none focus:border-violet-700 duration-300'
           type='text'
           name='text'
           value={text}

@@ -5,7 +5,7 @@ const GridView = ({products}) => {
   
   return (
     <section className='wrapper section-p'>
-<div className=" grid grid-cols-3 gap-10">
+<div className=" grid lg:grid-cols-3 grid-cols-1 lg:gap-10 gap-2">
 {
 products &&  products.map((curEle)=>(
     <Product key={curEle.id} {...curEle} />

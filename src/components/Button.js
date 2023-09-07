@@ -13,8 +13,10 @@ const buttonVariance = cva(
         dark: "bg-gray-700 text-white rounded-lg hover:bg-gray-700/90",
         red:
           "bg-rose-700 border w-full text-center  text-slate-900 hover:bg-rose-700/90",
-        transparent:
-          "bg-transparent border font-semibold rounded w-[7rem] text-center text-stale-900 hover:bg-gray-500/10",
+        teal:
+          "bg-teal-500 border font-semibold rounded w-[7rem] text-center text-gray-800 hover:bg-teal-500/90",
+        orng:
+          "bg-orange-500 border font-semibold rounded w-[7rem] text-center text-gray-800 hover:bg-orange-500/90",
       },
     },
     defaultVariants: {

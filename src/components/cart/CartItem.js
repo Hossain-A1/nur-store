@@ -4,22 +4,21 @@ import CartAmount from "../CartAmount";
 import { FaTrash } from "react-icons/fa";
 import { useCartContext } from "../../contexts/cartContext";
 
-const CartItem = ({ id, name, stock, color, image, price }) => {
+const CartItem = ({ id, name, stock, color, image, price,amount }) => {
 
-  const {removeCart} = useCartContext()
+  const {removeCart,setDecrease,setIncrease} = useCartContext()
 
-  let [amount, setAmount] = useState(1);
 
-  const setDecrease = () => {
-    amount >= 1
-      ? setAmount((curAmount) => (curAmount = amount--))
-      : setAmount(1);
-  };
-  const setIncrease = () => {
-    amount <= stock
-      ? setAmount((curAmount) => (curAmount = amount++))
-      : setAmount(stock);
-  };
+  // const setDecrease = () => {
+  //   amount >= 1
+  //     ? setAmount((curAmount) => (curAmount = amount--))
+  //     : setAmount(1);
+  // };
+  // const setIncrease = () => {
+  //   amount <= stock
+  //     ? setAmount((curAmount) => (curAmount = amount++))
+  //     : setAmount(stock);
+  // };
   return (
     <div className='cart-details grid grid-cols-5 gap-5 place-items-center  mt-5 '>
       {/* items */}
@@ -52,8 +51,8 @@ const CartItem = ({ id, name, stock, color, image, price }) => {
    <div>
    <CartAmount 
           amount={amount}
-          setDecrease={setDecrease}
-          setIncrease={setIncrease}
+          setDecrease={()=>setDecrease(id)}
+          setIncrease={()=>setIncrease(id)}
         />
    </div>
       </div>
